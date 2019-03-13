@@ -1,2 +1,13 @@
-/.idea/
-/target/
+.metadata/
+target
+.idea
+.settings
+*.classpath
+*.project
+*.iml
+*.war
+*.log
+*.gz
+*DS_Store
+/bin/
+.recommenders/
