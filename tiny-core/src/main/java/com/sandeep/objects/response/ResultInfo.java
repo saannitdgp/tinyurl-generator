@@ -1,6 +1,5 @@
-package com.sandeep.objects.constants.response;
+package com.sandeep.objects.response;
 
-import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import lombok.AllArgsConstructor;

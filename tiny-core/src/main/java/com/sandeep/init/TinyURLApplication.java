@@ -15,4 +15,3 @@ public class TinyURLApplication {
         SpringApplication.run(TinyURLApplication.class);
     }
 }
-
