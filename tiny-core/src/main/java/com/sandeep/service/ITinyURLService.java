@@ -1,6 +1,10 @@
 package com.sandeep.service;
 
 import com.sandeep.entity.Student;
+import com.sandeep.objects.request.StudentSRO;
+import com.sandeep.objects.response.StudentInfoResponse;
+
+import java.util.Set;
 
 public interface ITinyURLService {
     /**
@@ -10,8 +14,13 @@ public interface ITinyURLService {
      */
     boolean isValidURL(String url);
 
-    long register(Student student);
+    long register(StudentSRO studentSRO);
 
     Student findStudent(int id);
+
+    StudentInfoResponse findStudentByReportCardId(int reportCardId);
+
+    Set<StudentInfoResponse> fetchStudentsOfClass(String className);
+
 
 }

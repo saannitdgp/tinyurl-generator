@@ -48,6 +48,8 @@ public class HibernateConfig {
         Properties hibernateProperties = new Properties();
         hibernateProperties.put("hibernate.dialect", MYSQL_DIALEACT);
         hibernateProperties.put("hibernate.show_sql", SHOW_SQL);
+        hibernateProperties.put("hibernate.hbm2ddl.auto","update");
+
         sessionFactoryBean.setHibernateProperties(hibernateProperties);
         return sessionFactoryBean;
     }
