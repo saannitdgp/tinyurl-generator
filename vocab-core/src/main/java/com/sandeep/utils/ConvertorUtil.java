@@ -26,6 +26,7 @@ public class ConvertorUtil {
 		StringBuilder stringBuilder = new StringBuilder();
 		if (requestedWord.getSynonyms() != null) {
 			for (String str : requestedWord.getSynonyms()) {
+				str = str.substring(0,1).toUpperCase() + str.substring(1).toLowerCase();
 				stringBuilder.append(str + "-");
 			}
 		}
@@ -43,7 +44,7 @@ public class ConvertorUtil {
 		if(wordInfo != null) {
 			response.setDescription(wordInfo.getDescription());
 			response.setWord(wordInfo.getWord());
-			response.setSynonyms(wordInfo.getDescription());
+			response.setSynonyms(wordInfo.getListOfSynonyms());
 			response.setTranslationInHindi(wordInfo.getTranslationInHindi());
 		}
 		return response;
