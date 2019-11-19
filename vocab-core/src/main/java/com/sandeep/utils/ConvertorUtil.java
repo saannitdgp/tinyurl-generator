@@ -1,8 +1,11 @@
 package com.sandeep.utils;
 
 
+import com.sandeep.entity.User;
 import com.sandeep.entity.WordInfo;
+import com.sandeep.objects.request.AddUserRequest;
 import com.sandeep.objects.request.AddWordRequest;
+import com.sandeep.objects.response.UserInfoResponse;
 import com.sandeep.objects.response.WordInfoResponse;
 import org.springframework.stereotype.Service;
 
@@ -47,6 +50,24 @@ public class ConvertorUtil {
 			response.setSynonyms(wordInfo.getListOfSynonyms());
 			response.setTranslationInHindi(wordInfo.getTranslationInHindi());
 		}
+		return response;
+	}
+
+	public User getUserFromAddUserRequest(AddUserRequest request) {
+
+		User user = new User();
+		user.setName(request.getUserName());
+		user.setEmail(request.getUserEmail());
+		user.setCreatedAt(new Timestamp(System.currentTimeMillis()));
+		user.setUpdatedAt(new Timestamp(System.currentTimeMillis()));
+		return user;
+	}
+
+	public UserInfoResponse getUserInfoFromUser(User user) {
+
+		UserInfoResponse response = new UserInfoResponse();
+		response.setUserName(user.getName());
+		response.setUserEmail(user.getEmail());
 		return response;
 	}
 }

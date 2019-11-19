@@ -1,5 +1,6 @@
 package com.sandeep.controller;
 
+import com.sandeep.entity.User;
 import com.sandeep.objects.request.AddWordRequest;
 import com.sandeep.objects.response.BaseResponse;
 import com.sandeep.objects.response.WordInfoResponse;
@@ -35,8 +36,17 @@ public class VocabGeneratorController extends BaseController {
 		return ResponseEntity.ok(baseResponse);
 	}
 
-	@RequestMapping(value = "/v1/test",method = RequestMethod.POST)
-	String get(@Valid @RequestBody AddWordRequest request){
-		return ("OK");
+	@RequestMapping(value = "/v1/user/register",method = RequestMethod.POST)
+	ResponseEntity<BaseResponse<String>> registerUser(@Valid @RequestBody AddWordRequest userInfo ) {
+		BaseResponse<String> baseResponse = new BaseResponse<>();
+		setSuccessfulResponse(baseResponse);
+		return ResponseEntity.ok(baseResponse);
+	}
+
+	@RequestMapping(value = "/v1/user/{email}",method = RequestMethod.GET)
+	ResponseEntity<BaseResponse<User>> fetchUser(String email ) {
+		BaseResponse<User> baseResponse = new BaseResponse<>();
+		setSuccessfulResponse(baseResponse);
+		return ResponseEntity.ok(baseResponse);
 	}
 }

@@ -5,13 +5,14 @@ import lombok.Getter;
 import lombok.Setter;
 
 import javax.persistence.*;
+import java.io.Serializable;
 import java.sql.Timestamp;
 
 @Entity
 @Table(name = "word_info")
 @Setter
 @Getter
-public class WordInfo {
+public class WordInfo{
 
     @Id
     @Column(name = "word",updatable = false)

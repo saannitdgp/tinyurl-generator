@@ -1,5 +1,6 @@
 package com.sandeep.dao;
 
+import com.sandeep.entity.User;
 import com.sandeep.entity.WordInfo;
 
 public interface IWordInfoDao {
@@ -23,4 +24,17 @@ public interface IWordInfoDao {
 	 * @return wordInfo
 	 */
 	WordInfo fetchWordInfoByName(String word);
+
+	/**
+	 * function for fetching a user  by email
+	 * @param email of user
+	 */
+	User fetchUserByEmail(String email);
+
+	/**
+	 * function for fetching a user  by userId
+	 * @param userId
+	 */
+	User fetchUserByUserId(Long userId);
+
 }
